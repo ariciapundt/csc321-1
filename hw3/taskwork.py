@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 27 16:09:51 2023
+
+@author: ariciapundt
+"""
+
+import sys
+import time
+import zmq
+
+
+context = zmq.Context()
+
+# Socket to receive messages on
+receiver = context.socket(zmq.PULL)
+receiver.connect("tcp://node02:5557")
+
+# Socket to send messages to
+sender = context.socket(zmq.PUSH)
+sender.connect("tcp://node00:5558")
+
+# Process tasks forever
+while True:
+    s = receiver.recv()
+
+    # Simple progress indicator for the viewer
+    sys.stdout.write('.')
+    sys.stdout.flush()
+
+    # Do the work
+    time.sleep(int(s)*0.001)
+
+    # Send results to sink
+    sender.send(b'')
