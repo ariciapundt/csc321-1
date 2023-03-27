@@ -1,0 +1,17 @@
+#BEFORE
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+Active UNIX domain sockets (w/o servers)
+
+#DURING
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 node00:5558             hw3-node01-1.hw3_:47372 ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+
+#AFTER
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 node00:5558             hw3-node01-1.hw3_:47372 TIME_WAIT  
+Active UNIX domain sockets (w/o servers)
